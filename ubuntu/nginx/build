@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -e
+
+
+docker build -f ./buildDocker/Dockerfile -t kyechou/ubuntu:nginx ./buildDocker
+docker create -h ubuntu-nginx --name ubuntu-nginx -p 80:80 kyechou/ubuntu:nginx
