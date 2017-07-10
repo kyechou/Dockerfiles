@@ -2,6 +2,4 @@
 
 set -e
 
-
 docker build -f ./buildDocker/Dockerfile -t kyechou/centos:nginx ./buildDocker
-docker create -h centos-nginx --name centos-nginx -p 80:80 kyechou/centos:nginx

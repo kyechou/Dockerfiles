@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -e
+
+docker create -h ubuntu-tfcpu --name ubuntu-tfcpu -p 8888:8888 kyechou/ubuntu:tf-cpu

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -e
+
+docker create -h centos-nginx --name centos-nginx -p 80:80 kyechou/centos:nginx

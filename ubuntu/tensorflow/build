@@ -1,6 +1,0 @@
-#!/bin/bash
-
-set -e
-
-
-docker build -f ./buildDocker/Dockerfile -t kyechou/ubuntu:tensorflow ./buildDocker

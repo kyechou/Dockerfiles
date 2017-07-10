@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -e
+
+docker build -f ./buildDocker/Dockerfile -t kyechou/centos:tf-cpu ./buildDocker
