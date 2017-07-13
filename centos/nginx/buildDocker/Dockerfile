@@ -11,6 +11,8 @@ RUN yum -y update \
 COPY etc /etc
 COPY usr /usr
 
+EXPOSE 80 443
+
 CMD ["/usr/sbin/nginx"]
 
 # vim: set ts=4 sw=4 et :

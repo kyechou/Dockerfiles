@@ -14,6 +14,8 @@ RUN pacman -Syu --needed --noconfirm nginx-mainline \
 COPY etc /etc
 COPY usr /usr
 
+EXPOSE 80 443
+
 CMD ["/usr/bin/nginx"]
 
 # vim: set ts=4 sw=4 et :
