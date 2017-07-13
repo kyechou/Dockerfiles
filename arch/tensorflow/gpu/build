@@ -2,5 +2,4 @@
 
 set -e
 
-
 docker build -f ./buildDocker/Dockerfile -t kyechou/archlinux:tf-gpu ./buildDocker
