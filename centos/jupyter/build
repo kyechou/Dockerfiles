@@ -2,5 +2,5 @@
 
 set -e
 
-
+cd "$(dirname "$0")"
 docker build -f ./buildDocker/Dockerfile -t kyechou/centos:jupyter ./buildDocker
