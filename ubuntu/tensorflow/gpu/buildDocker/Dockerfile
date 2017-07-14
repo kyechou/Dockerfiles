@@ -15,6 +15,6 @@ RUN apt-get --yes update \
     && pip3 install tensorflow-gpu \
     && ln -sf python3 /usr/bin/python
 
-CMD ["/bin/bash"]
+ENTRYPOINT ["/bin/bash"]
 
 # vim: set ts=4 sw=4 et :

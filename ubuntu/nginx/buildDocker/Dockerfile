@@ -16,6 +16,6 @@ COPY etc /etc
 
 EXPOSE 80 443
 
-CMD ["/usr/sbin/nginx"]
+ENTRYPOINT ["/usr/sbin/nginx"]
 
 # vim: set ts=4 sw=4 et :

@@ -21,6 +21,6 @@ RUN pacman -Syu --needed --noconfirm \
         /var/lib/pacman/sync/* \
         /etc/pacman.d/mirrorlist.pacnew
 
-CMD ["/bin/bash"]
+ENTRYPOINT ["/bin/bash"]
 
 # vim: set ts=4 sw=4 et :

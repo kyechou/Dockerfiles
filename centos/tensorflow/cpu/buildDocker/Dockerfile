@@ -8,6 +8,6 @@ RUN yum -y update \
     && pip3 install tensorflow \
     && ln -sf python3 /usr/bin/python
 
-CMD ["/bin/bash"]
+ENTRYPOINT ["/bin/bash"]
 
 # vim: set ts=4 sw=4 et :

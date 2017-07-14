@@ -13,6 +13,6 @@ RUN yum -y update \
     && ln -sf python3 /usr/bin/python \
     && mkdir -p /usr/local/cuda-8.0
 
-CMD ["/bin/bash"]
+ENTRYPOINT ["/bin/bash"]
 
 # vim: set ts=4 sw=4 et :
