@@ -1,5 +1,0 @@
-#!/bin/bash
-
-set -e
-
-docker create -h arch-nginx --name arch-nginx -p 80:80 -p 443:443 kyechou/archlinux:nginx
