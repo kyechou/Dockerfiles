@@ -10,9 +10,10 @@ RUN apt-get --yes update \
         python3 \
         python3-pip \
         python3-dev \
-    && apt-get --yes autoremove \
-    && apt-get --yes clean \
     && pip3 install tensorflow-gpu \
+    && apt-get --yes remove python3-pip --purge \
+    && apt-get --yes autoremove --purge \
+    && apt-get --yes clean \
     && ln -sf python3 /usr/bin/python
 
 ENTRYPOINT ["/bin/bash"]
