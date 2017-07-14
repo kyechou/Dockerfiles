@@ -7,6 +7,7 @@ COPY sources.list /etc/apt/sources.list
 RUN apt-get --yes update \
     && apt-get --yes upgrade \
     && apt-get --yes install \
+        libgomp1 \
         python3 \
         python3-pip \
         python3-dev \
