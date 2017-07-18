@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -e
+
+docker create -h arch-osjs --name arch-osjs -p 80:8000 kyechou/archlinux:osjs
