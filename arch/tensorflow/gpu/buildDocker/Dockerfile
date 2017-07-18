@@ -11,8 +11,10 @@ RUN pacman -Syu --needed --noconfirm \
         python-markdown \
         python-numpy \
         python-pip \
+        git \
     && pip install tensorflow-gpu \
-    && pacman -Rsn --noconfirm python-pip \
+    && git clone https://github.com/tensorflow/benchmarks.git \
+    && pacman -Rsn --noconfirm python-pip git \
     && rm -rf \
         /usr/share/man/* \
         /var/cache/pacman/pkg/* \

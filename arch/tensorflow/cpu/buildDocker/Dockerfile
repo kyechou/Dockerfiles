@@ -8,6 +8,9 @@ RUN pacman -Syu --needed --noconfirm \
         python-bleach \
         python-markdown \
         python-numpy \
+        git \
+    && git clone https://github.com/tensorflow/benchmarks.git \
+    && pacman -Rsn --noconfirm git \
     && rm -rf \
         /usr/share/man/* \
         /var/cache/pacman/pkg/* \
