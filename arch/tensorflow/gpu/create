@@ -1,5 +1,0 @@
-#!/bin/bash
-
-set -e
-
-docker create -h arch-tfgpu --name arch-tfgpu -p 8888:8888 kyechou/archlinux:tf-gpu

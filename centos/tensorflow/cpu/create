@@ -1,5 +1,0 @@
-#!/bin/bash
-
-set -e
-
-docker create -h centos-tfcpu --name centos-tfcpu -p 8888:8888 kyechou/centos:tf-cpu

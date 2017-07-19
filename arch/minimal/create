@@ -1,5 +1,0 @@
-#!/bin/bash
-
-set -e
-
-docker create -h arch --name arch kyechou/archlinux:latest

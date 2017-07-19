@@ -1,5 +1,0 @@
-#!/bin/bash
-
-set -e
-
-docker create -h centos-tfgpu --name centos-tfgpu -p 8888:8888 kyechou/centos:tf-gpu
