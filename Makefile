@@ -6,7 +6,6 @@
 
 TARGETS=archlinux \
 	ubuntu \
-	osjs \
 	tensorflow \
 	theano \
 	keras
@@ -31,9 +30,6 @@ archlinux:
 
 ubuntu:
 	make -C ubuntu
-
-osjs: archlinux
-	make -C osjs
 
 tensorflow: archlinux ubuntu
 	make -C tensorflow
