@@ -12,7 +12,4 @@ all: build
 build:
 	docker build -f ./buildDocker/Dockerfile -t kyechou/tensorflow:cpu-centos ./buildDocker
 
-create: build
-	docker create -h tfcpu --name tfcpu -p 8888:8888 kyechou/tensorflow:cpu-centos
-
-.PHONY: all build create
+.PHONY: all build

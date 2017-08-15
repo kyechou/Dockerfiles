@@ -12,7 +12,4 @@ all: build
 build:
 	docker build -f ./buildDocker/Dockerfile -t kyechou/theano:latest -t kyechou/theano:arch ./buildDocker
 
-create: build
-	docker create -h theano --name theano kyechou/theano:arch
-
-.PHONY: all build create
+.PHONY: all build

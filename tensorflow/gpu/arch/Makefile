@@ -10,9 +10,6 @@ MAKEFLAGS+=-j$(NPROCS)
 all: build
 
 build:
-	docker build -f ./buildDocker/Dockerfile -t kyechou/tensorflow:latest -t kyechou/tensorflow:gpu-arch ./buildDocker
+	docker build -f ./buildDocker/Dockerfile -t kyechou/tensorflow:latest-gpu -t kyechou/tensorflow:gpu-arch ./buildDocker
 
-create: build
-	docker create -h tfgpu --name tfgpu -p 8888:8888 kyechou/tensorflow:gpu-arch
-
-.PHONY: all build create
+.PHONY: all build

@@ -12,7 +12,4 @@ all: build
 build:
 	docker build -f ./buildDocker/Dockerfile -t kyechou/keras:tf-centos ./buildDocker
 
-create: build
-	docker create -h keras-tf --name keras-tf kyechou/keras:tf-centos
-
-.PHONY: all build create
+.PHONY: all build

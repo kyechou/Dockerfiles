@@ -12,7 +12,4 @@ all: build
 build:
 	docker build -f ./buildDocker/Dockerfile -t kyechou/osjs:latest -t kyechou/osjs:arch ./buildDocker
 
-create: build
-	docker create -h osjs --name osjs -p 80:8000 kyechou/osjs:arch
-
-.PHONY: all build create
+.PHONY: all build

@@ -12,7 +12,4 @@ all: build
 build:
 	docker build -f ./buildDocker/Dockerfile -t kyechou/archlinux:latest ./buildDocker
 
-create: build
-	docker create -h arch --name arch kyechou/archlinux:latest
-
-.PHONY: all build create
+.PHONY: all build

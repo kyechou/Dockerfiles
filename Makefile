@@ -4,45 +4,44 @@
 # Update: 2017-07-25
 ############################################
 
-TARGETS=arch \
+TARGETS=archlinux \
 	ubuntu \
 	osjs \
 	tensorflow \
 	theano \
 	keras
 
+PUSH_TARGETS=$(TARGETS:%=%-push)
+
 NPROCS=$(shell grep -c ^processor /proc/cpuinfo)
 MAKEFLAGS+=-j$(NPROCS)
 
 all: $(TARGETS)
 
-push:
-	-@docker push kyechou/archlinux
-	-@docker push kyechou/ubuntu
-	-@docker push kyechou/osjs
-	-@docker push kyechou/tensorflow
-	-@docker push kyechou/theano
-	-@docker push kyechou/keras
+push: $(PUSH_TARGETS)
+
+$(PUSH_TARGETS):
+	-@docker push kyechou/$(@:%-push=%)
 
 clean:
 	-@./rmimgs
 
-arch:
-	make -C arch
+archlinux:
+	make -C archlinux
 
 ubuntu:
 	make -C ubuntu
 
-osjs: arch
+osjs: archlinux
 	make -C osjs
 
-tensorflow: arch ubuntu
+tensorflow: archlinux ubuntu
 	make -C tensorflow
 
-theano: arch ubuntu
+theano: archlinux ubuntu
 	make -C theano
 
 keras: theano tensorflow
 	make -C keras
 
-.PHONY: all push clean $(TARGETS)
+.PHONY: all push clean $(TARGETS) $(PUSH_TARGETS)

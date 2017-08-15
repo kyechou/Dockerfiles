@@ -10,9 +10,6 @@ MAKEFLAGS+=-j$(NPROCS)
 all: build
 
 build:
-	docker build -f ./buildDocker/Dockerfile -t kyechou/keras:latest -t kyechou/keras:tf-arch ./buildDocker
+	docker build -f ./buildDocker/Dockerfile -t kyechou/keras:latest-tensorflow -t kyechou/keras:tf-arch ./buildDocker
 
-create: build
-	docker create -h keras-tf --name keras-tf kyechou/keras:tf-arch
-
-.PHONY: all build create
+.PHONY: all build

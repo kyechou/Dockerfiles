@@ -10,9 +10,6 @@ MAKEFLAGS+=-j$(NPROCS)
 all: build
 
 build:
-	docker build -f ./buildDocker/Dockerfile -t kyechou/keras:theano-arch ./buildDocker
+	docker build -f ./buildDocker/Dockerfile -t kyechou/keras:latest-theano -t kyechou/keras:theano-arch ./buildDocker
 
-create: build
-	docker create -h keras-theano --name keras-theano kyechou/keras:theano-arch
-
-.PHONY: all build create
+.PHONY: all build

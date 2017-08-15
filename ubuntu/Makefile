@@ -12,7 +12,4 @@ all: build
 build:
 	docker build -f ./buildDocker/Dockerfile -t kyechou/ubuntu:latest ./buildDocker
 
-create: build
-	docker create -h ubuntu --name ubuntu kyechou/ubuntu:latest
-
-.PHONY: all build create
+.PHONY: all build

@@ -10,9 +10,6 @@ MAKEFLAGS+=-j$(NPROCS)
 all: build
 
 build:
-	docker build -f ./buildDocker/Dockerfile -t kyechou/tensorflow:cpu-arch ./buildDocker
+	docker build -f ./buildDocker/Dockerfile -t kyechou/tensorflow:latest-cpu -t kyechou/tensorflow:cpu-arch ./buildDocker
 
-create: build
-	docker create -h tfcpu --name tfcpu -p 8888:8888 kyechou/tensorflow:cpu-arch
-
-.PHONY: all build create
+.PHONY: all build

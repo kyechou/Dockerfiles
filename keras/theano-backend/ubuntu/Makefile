@@ -12,7 +12,4 @@ all: build
 build:
 	docker build -f ./buildDocker/Dockerfile -t kyechou/keras:theano-ubuntu ./buildDocker
 
-create: build
-	docker create -h keras-theano --name keras-theano kyechou/keras:theano-ubuntu
-
-.PHONY: all build create
+.PHONY: all build
