@@ -7,18 +7,9 @@
 NPROCS=$(shell grep -c ^processor /proc/cpuinfo)
 MAKEFLAGS+=-j$(NPROCS)
 
-all: arch centos ubuntu arch-dev
+all: build
 
-arch:
-	make -C arch
+build:
+	docker build -f ./buildDocker/Dockerfile -t kyechou/tensorflow:gpu-arch-dev ./buildDocker
 
-arch-dev:
-	make -C arch-dev
-
-centos:
-	make -C centos
-
-ubuntu:
-	make -C ubuntu
-
-.PHONY: all arch centos ubuntu arch-dev
+.PHONY: all build
