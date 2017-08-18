@@ -7,15 +7,12 @@
 NPROCS=$(shell grep -c ^processor /proc/cpuinfo)
 MAKEFLAGS+=-j$(NPROCS)
 
-all: arch centos ubuntu arch-dev
+all: base base-devel
 
-arch:
-	make -C arch
+base:
+	make -C base
 
-centos:
-	make -C centos
+base-devel:
+	make -C base-devel
 
-ubuntu:
-	make -C ubuntu
-
-.PHONY: all arch centos ubuntu arch-dev
+.PHONY: all base base-devel

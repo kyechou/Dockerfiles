@@ -6,6 +6,7 @@
 
 TARGETS=archlinux \
 	ubuntu \
+	pause \
 	tensorflow \
 	theano \
 	keras
@@ -30,6 +31,9 @@ archlinux:
 
 ubuntu:
 	make -C ubuntu
+
+pause: archlinux
+	make -C pause
 
 tensorflow: archlinux ubuntu
 	make -C tensorflow

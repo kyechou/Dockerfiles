@@ -7,15 +7,11 @@
 NPROCS=$(shell grep -c ^processor /proc/cpuinfo)
 MAKEFLAGS+=-j$(NPROCS)
 
-all: arch centos ubuntu arch-dev
+all: build
 
-arch:
-	make -C arch
+build:
+	gcc pause.c -o ./buildDocker/pause -Wall -Wextra -Wpedantic -Wl,--gc-sections -O2 -std=c11
+	docker build -f ./buildDocker/Dockerfile -t kyechou/pause:latest-dev ./buildDocker
+	rm ./buildDocker/pause
 
-centos:
-	make -C centos
-
-ubuntu:
-	make -C ubuntu
-
-.PHONY: all arch centos ubuntu arch-dev
+.PHONY: all build
