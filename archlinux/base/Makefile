@@ -7,12 +7,9 @@
 NPROCS=$(shell grep -c ^processor /proc/cpuinfo)
 MAKEFLAGS+=-j$(NPROCS)
 
-all: base base-devel
+all: build
 
-base:
-	make -C base
+build:
+	docker build -f ./buildDocker/Dockerfile -t kyechou/archlinux:latest ./buildDocker
 
-base-devel:
-	make -C base-devel
-
-.PHONY: all base base-devel
+.PHONY: all build

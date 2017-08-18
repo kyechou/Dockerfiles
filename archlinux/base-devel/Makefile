@@ -10,6 +10,6 @@ MAKEFLAGS+=-j$(NPROCS)
 all: build
 
 build:
-	docker build -f ./buildDocker/Dockerfile -t kyechou/tensorflow:gpu-arch-dev ./buildDocker
+	docker build -f ./buildDocker/Dockerfile -t kyechou/archlinux:latest-dev ./buildDocker
 
 .PHONY: all build
