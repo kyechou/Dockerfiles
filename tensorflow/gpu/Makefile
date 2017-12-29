@@ -18,4 +18,4 @@ centos:
 ubuntu:
 	make -C ubuntu
 
-.PHONY: all arch centos ubuntu arch-dev
+.PHONY: all arch centos ubuntu
