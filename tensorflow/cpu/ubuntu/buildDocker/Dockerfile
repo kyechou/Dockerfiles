@@ -1,4 +1,4 @@
-FROM kyechou/ubuntu
+FROM ubuntu
 
 LABEL maintainer="KY Chou <forendef2846@gmail.com>"
 

@@ -1,15 +1,12 @@
 ############################################
 # Makefile for building images
 # Author: KY Chou <forendef2846@gmail.com>
-# Update: 2017-07-25
 ############################################
 
 TARGETS=archlinux \
-	ubuntu \
 	pause \
-	tensorflow \
-	theano \
-	keras
+	cloudnet \
+	tensorflow
 
 PUSH_TARGETS=$(TARGETS:%=%-push)
 
@@ -24,24 +21,23 @@ $(PUSH_TARGETS):
 	-@docker push kyechou/$(@:%-push=%)
 
 clean:
+	-@rm -f pause/buildDocker/pause &>/dev/null
 	-@./rmimgs
+
+cleanall:
+	-@rm -f pause/buildDocker/pause &>/dev/null
+	-@./rmimgs -a
 
 archlinux:
 	make -C archlinux
 
-ubuntu:
-	make -C ubuntu
-
 pause: archlinux
 	make -C pause
 
-tensorflow: archlinux ubuntu
+cloudnet: archlinux
+	make -C cloudnet
+
+tensorflow: archlinux
 	make -C tensorflow
 
-theano: archlinux ubuntu
-	make -C theano
-
-keras: theano tensorflow
-	make -C keras
-
-.PHONY: all push clean $(TARGETS) $(PUSH_TARGETS)
+.PHONY: all push clean cleanall $(TARGETS) $(PUSH_TARGETS)
